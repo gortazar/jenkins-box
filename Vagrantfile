@@ -21,6 +21,7 @@ Vagrant.configure("2") do |config|
   # network interface) by any external networks.
   # config.vm.network :private_network, ip: "33.33.33.10"
   config.vm.network :forwarded_port, guest: 8080, host: 8080
+  config.vm.network :forwarded_port, guest: 9000, host: 9000
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
@@ -53,8 +54,10 @@ Vagrant.configure("2") do |config|
   # View the documentation for the provider you're using for more
   # information on available options.
 
-  config.ssh.max_tries = 40
-  config.ssh.timeout   = 120
+  # Deprecated in favor of boot_timeout
+  # config.ssh.max_tries = 40
+  # config.ssh.timeout   = 120
+  config.vm.boot_timeout = 120
 
   # The path to the Berksfile to use with Vagrant Berkshelf
   # config.berkshelf.berksfile_path = "./Berksfile"
@@ -79,6 +82,21 @@ Vagrant.configure("2") do |config|
         'default_ruby'  => '2.0.0',
         'global_gems'   => [{ 'name'    => 'bundler' },
                             { 'name'    => 'rake' }]
+      },
+      'java' => {
+        'jdk_version' => '7'
+      },
+      'mysql' => {
+        'server_debian_password' => 't3l1t@',
+        'server_root_password' => 't3l1t@',
+        'server_repl_password' => 't3l1t@'
+      },
+      'sonar' => {
+        'version' => '4.0',
+        'checksum' => 'f5573c0355509b0ba378279501f561b1',
+        'os_version' => 'linux-x86-64',
+        'jdbc_url' => 'jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true',
+        'jdbc_password' => 'sonar21'
       }
     }
 
@@ -86,10 +104,11 @@ Vagrant.configure("2") do |config|
     chef.run_list = [
       'recipe[apt]',
       'recipe[jenkins::server]',
-      'recipe[rvm]',
-      'recipe[rvm::vagrant]',
-      'recipe[rvm::system]',
-      'recipe[rvm::gem_package]'
+      'recipe[java]',
+      'recipe[mysql]',
+      'recipe[sonarqube]',
+      'recipe[sonarqube::database_mysql]',
+      'recipe[php]'
     ]
   end
 end
