@@ -7,7 +7,7 @@ aptitude update
 #aptitude safe-upgrade
 
 # Install chef and berkshelf dependencies
-apt-get install git-core curl libxslt1-dev libxml2-dev build-essential
+apt-get -y install git-core curl libxslt1-dev libxml2-dev build-essential
 
 # Install chef with the omnibus installer
 \curl -L https://www.opscode.com/chef/install.sh | bash
@@ -16,7 +16,6 @@ apt-get install git-core curl libxslt1-dev libxml2-dev build-essential
 /opt/chef/embedded/bin/gem install berkshelf --no-ri --no-rdoc
 
 # Prepare folder for cookbooks described in Berksfile
-cd /vagrant_data
 mkdir cookbooks
 
 # Install cookbooks
