@@ -12,7 +12,9 @@ Setup a VM with Jenkins & Sonarqube ready to be used as a CI server for Java and
 - Build [Java](https://www.java.com/) projects using [JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 - Build [Php](http://php.net/) projects using Php
 
-## Getting Started
+## Installation
+
+### With Vagrant
 
 Ensure that the dependencies are setup and then just execute:
 
@@ -30,21 +32,23 @@ And open sonar:
 
     open http://localhost:9000
 
-## Manage Jenkins configuration
+### Without Vagrant
 
-After each time you made changes to the global Jenkins configuration, plugins or jobs just do:
+To install jenkins-box without using vagrant, we first need to setup the environment:
 
-    grunt jenkins-backup
+    apt-get update
+    apt-get -y install git-core
 
-This will backup all stuff to the jenkins-configuration folder. You may put it under version control, yay!
+Then, clone this repository into /opt folder:
 
-You can install jenkins configuration using:
+    mkdir /opt
+    cd /opt
+    git clone https://github.com/gortazar/jenkins-box.git
 
-    grunt jenkins-install
+And use the bootstrap script:
 
-When you added / removed plugins you must restart Jenkins:
-
-    open http://localhost:8080/safeRestart
+    cd jenkins-box
+    bootstrap-chef-solo.sh
 
 ## Dependencies
 
