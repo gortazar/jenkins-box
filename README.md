@@ -63,5 +63,3 @@ Copyright (c) 2013 Jens Bissinger. See [LICENSE.txt](LICENSE.txt).
 Maintainer: Patxi Gortázar <patxi.gortazar@gmail.com>
 
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/dpree/jenkins-box/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
