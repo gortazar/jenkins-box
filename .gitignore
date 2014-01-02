@@ -15,3 +15,5 @@ bin/*
 
 # NPM
 node_modules
+
+!.travis.yml
