@@ -1,5 +1,7 @@
 # Jenkins Box
 
+[![Build Status](https://travis-ci.org/gortazar/jenkins-box.png)](https://travis-ci.org/gortazar/jenkins-box)
+
 Setup a VM with Jenkins & Sonarqube ready to be used as a CI server for Java and Php. It is based on the original dpree/jenkins-box. 
 Sonar is configured to use the mysql database, as the H2 embedded database is discouraged for production sites.
 
