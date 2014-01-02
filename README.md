@@ -1,6 +1,9 @@
 # Jenkins Box
 
-Setup a VM with Jenkins & Sonarqube ready to be used as a CI server for Java and Php. It is based on the original dpree/jenkins-box.
+Setup a VM with Jenkins & Sonarqube ready to be used as a CI server for Java and Php. It is based on the original dpree/jenkins-box. 
+Sonar is configured to use the mysql database, as the H2 embedded database is discouraged for production sites.
+
+This box has been tested on a 1Gb machine. However, memory requirements depend heavily on the tasks run from jenkins. 
 
 ![Jenkins Box](./jenkins-box.png)
 
@@ -34,6 +37,8 @@ And open sonar:
 
 ### Without Vagrant
 
+Perform all these steps as root by switching to the root user or using sudo.
+
 To install jenkins-box without using vagrant, we first need to setup the environment:
 
     apt-get update
@@ -50,7 +55,11 @@ And use the bootstrap script:
     cd jenkins-box
     bootstrap-chef-solo.sh
 
+If you prefer to clone the repository in a different location then you need to change the `solo.rb` file accordingly. Note that this file requires **absolute paths**.
+
 ## Dependencies
+
+These dependencies are needed on the host machine when provisioning with vagrant:
 
 - Vagrant 1.2+
 - Ruby + Bundler
