@@ -1,5 +1,6 @@
 language: java
-before_script: 
+before_script:
+  - sudo apt-get update 
   - ./prepare_solo_rb.sh
   - sudo ./bootstrap-chef-solo.sh
 script: ./tests/run_tests.sh

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Always do this to update indexes
-aptitude update
+apt-get update
 
 # This is recommended for production, but can be skipped when testing
 #aptitude safe-upgrade
