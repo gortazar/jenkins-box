@@ -1,3 +1,7 @@
+branches:
+  only:
+    - master
+    - lp
 language: java
 before_script:
   - sudo apt-get update 

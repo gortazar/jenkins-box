@@ -100,6 +100,11 @@ Vagrant.configure("2") do |config|
         'runner' => {
           'version' => '2.3'
         }
+      },
+      'jenkins' => {
+        'server' => {
+          'plugins' => ['SonarQube', 'git', 'ChuckNorris']
+        }
       }
     }
 

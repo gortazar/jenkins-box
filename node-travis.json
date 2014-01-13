@@ -9,6 +9,11 @@
         "runner" : {
           "version" : "2.3"
         }
-      }
+      },
+  "jenkins" : {
+    "server" : {
+      "plugins" : ["git","SonarQube","ChuckNorris"]
+    }
+  }
 
 }

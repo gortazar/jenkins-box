@@ -4,5 +4,10 @@
         "server_debian_password" : "t3l1t@",
         "server_root_password" : "t3l1t@",
         "server_repl_password" : "t3l1t@"
-      }
+      },
+  "jenkins" : {
+    "server" : {
+      "plugins" : ["git","SonarQube","ChuckNorris"]
+    }
+  }
 }
