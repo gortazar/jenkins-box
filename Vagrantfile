@@ -116,7 +116,8 @@ Vagrant.configure("2") do |config|
       'recipe[mysql]',
       'recipe[sonarqube]',
       'recipe[sonarqube::database_mysql]',
-      'recipe[php]'
+      'recipe[php]',
+      'recipe[haskell]'
     ]
   end
 end

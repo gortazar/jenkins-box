@@ -1,5 +1,13 @@
 {
-  "run_list" : ["recipe[apt]","recipe[jenkins::server]","recipe[java]","recipe[mysql]","recipe[sonarqube]","recipe[sonarqube::database_mysql]","recipe[php]"],
+  "run_list" : [
+	"recipe[apt]",
+	"recipe[jenkins::server]",
+	"recipe[java]",
+	"recipe[mysql]",
+	"recipe[sonarqube]",
+	"recipe[sonarqube::database_mysql]",
+	"recipe[php]",
+	"recipe[haskell]"],
   "mysql" : {
         "server_debian_password" : "t3l1t@",
         "server_root_password" : "t3l1t@",

@@ -1,5 +1,13 @@
 {
-  "run_list" : ["recipe[apt]","recipe[jenkins::server]","recipe[java]","recipe[sonarqube]","recipe[php]"],
+  "run_list" : [
+	"recipe[apt]",
+	"recipe[jenkins::server]",
+	"recipe[java]",
+	"recipe[mysql]",
+	"recipe[sonarqube]",
+	"recipe[sonarqube::database_mysql]",
+	"recipe[php]",
+	"recipe[haskell]"],
   "sonar" : {
         "version" : "4.0",
         "checksum" : "f5573c0355509b0ba378279501f561b1",
