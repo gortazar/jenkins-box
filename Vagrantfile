@@ -96,7 +96,10 @@ Vagrant.configure("2") do |config|
         'checksum' => 'f5573c0355509b0ba378279501f561b1',
         'os_version' => 'linux-x86-64',
         'jdbc_url' => 'jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true',
-        'jdbc_password' => 'sonar21'
+        'jdbc_password' => 'sonar21',
+        'runner' => {
+          'version' => '2.3'
+        }
       }
     }
 
