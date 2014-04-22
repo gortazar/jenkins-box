@@ -19,7 +19,7 @@ apt-get -y install git-core curl libxslt1-dev libxml2-dev build-essential
 mkdir cookbooks
 
 # Install cookbooks
-/opt/chef/embedded/bin/berks install --path ./cookbooks
+/opt/chef/embedded/bin/berks vendor ./cookbooks
 
 # Now we can run chef-solo
 chef-solo -c solo.rb
