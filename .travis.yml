@@ -1,7 +1,7 @@
 branches:
   only:
     - master
-    - lp
+    - remove-lock-files
 language: java
 before_script:
   - sudo apt-get update 
