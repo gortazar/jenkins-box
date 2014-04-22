@@ -15,9 +15,6 @@ apt-get -y install git-core curl libxslt1-dev libxml2-dev build-essential
 # Install berkshelf using chef's embedded ruby
 /opt/chef/embedded/bin/gem install berkshelf --no-ri --no-rdoc
 
-# Prepare folder for cookbooks described in Berksfile
-mkdir cookbooks
-
 # Install cookbooks
 /opt/chef/embedded/bin/berks vendor ./cookbooks
 
