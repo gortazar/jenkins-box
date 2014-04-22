@@ -1,4 +1,4 @@
-site :opscode
+site 'https://api.berkshelf.com'
 
 cookbook 'apt', '~> 1.10'
 cookbook 'jenkins', git: 'git://github.com/opscode-cookbooks/jenkins.git'
