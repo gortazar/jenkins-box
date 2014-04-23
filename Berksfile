@@ -1,7 +1,7 @@
 site :opscode
 
 cookbook 'apt', '~> 1.10'
-cookbook 'jenkins', '>= 1.2.0', git: 'git://github.com/opscode-cookbooks/jenkins.git', branch: 'v1.2.2'
+cookbook 'jenkins', '>= 1.2.0', git: 'git://github.com/opscode-cookbooks/jenkins.git', ref: 'ece633c206'
 cookbook 'rvm', git: 'git://github.com/fnichol/chef-rvm.git'
 cookbook 'java', git: 'git://github.com/socrata-cookbooks/java.git'
 cookbook 'mysql', git: 'git://github.com/opscode-cookbooks/mysql'
